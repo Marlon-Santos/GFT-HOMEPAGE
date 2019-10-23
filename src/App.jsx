@@ -1,10 +1,11 @@
 import React from "react";
-
+import Header from "./screen/home/header/index";
+import GlobalStyle from "./style/globalStyle";
 export const App = () => {
   return (
     <>
-      <h1>configurado</h1>
-      <h2>ok</h2>
+      <GlobalStyle />
+      <Header />
     </>
   );
 };
