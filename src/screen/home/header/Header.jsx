@@ -1,8 +1,9 @@
 import React from "react";
 import List from "../../../components/list/index";
 import MainList from "../../../components/mainList/index";
-import { Container } from "./style";
+import { Container, Div } from "./style";
 import logo from "../../../assets/logo.svg";
+import video from "../../../assets/video.mp4";
 
 export default function home() {
   return (
@@ -33,6 +34,20 @@ export default function home() {
             <MainList>PESQUISAR</MainList>
           </ul>
         </div>
+      </Container>
+      <Container>
+        <Div>
+          <video
+            muted=""
+            autoplay=""
+            loop="yes"
+            tabindex="0"
+            data-vscid="gipxbssvq"
+            width="100%"
+          >
+            <source src={video} type="video/mp4" />
+          </video>
+        </Div>
       </Container>
     </>
   );

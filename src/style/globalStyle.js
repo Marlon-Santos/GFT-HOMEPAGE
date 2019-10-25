@@ -13,5 +13,6 @@ export default createGlobalStyle`
     height:100% ;
   }
   body{
+    padding:0 50px;
   }
 `;
