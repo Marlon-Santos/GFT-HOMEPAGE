@@ -1,5 +1,5 @@
 import React from "react";
-import { Li } from "./style";
+import { Li, Div } from "./style";
 import FormatList from "./formatList/index";
 export const List = ({ children }) => {
   const list = React.createRef();
@@ -20,7 +20,7 @@ export const List = ({ children }) => {
       >
         {children}
       </Li>
-      <div
+      <Div
         ref={divi}
         onMouseOver={e => {
           list.current.style = ` background-color: #0e317d;
@@ -38,28 +38,79 @@ export const List = ({ children }) => {
           console.log("ok");
         }}
       >
-        <h1>{children}</h1>
+        <div>
+          <h1>{children}</h1>
+        </div>
         {children === "SECTORS" && (
-          <FormatList info={["sctores1", "sectores2", "sectores3"]} />
+          <FormatList
+            info={[
+              [
+                "mercado de capitais",
+                "inovação em front office",
+                "demandas regulatórias",
+                "gestão de risco",
+                "eficiência operacional"
+              ],
+              [
+                "banking",
+                "exponential banking",
+                "pagamentos",
+                "core banking",
+                "demanda regulatória"
+              ],
+              [
+                "seguros",
+                "o cliente no centro de tudo",
+                "gestão de sinistros de seguros",
+                "canais digitais",
+                "eficiência de ti"
+              ]
+            ]}
+          />
         )}
-        {children === "CASOS DE SUCESSO" && (
-          <FormatList info={["casesucess", "test1"]} />
-        )}
+        {/* {children === "CASOS DE SUCESSO" && <FormatList info="" />} */}
         {children === "DISCOVERY" && (
           <FormatList
             info={[
-              "discovery",
-              "disceheovery",
-              "discoverydhde",
-              "discovery",
-              "test1"
+              ["inovação na gft", "nossos laboratórios", "code_n"],
+              ["publicações"],
+              ["parceiros"]
             ]}
           />
         )}
         {children === "EMPRESA" && (
-          <FormatList info={["emrssdgyegdejh", "test1"]} />
+          <FormatList
+            info={[
+              [
+                "sobre a gft",
+                "group executive board",
+                "localização",
+                "nossa história",
+                "regional managing director latam da gft"
+              ],
+              [
+                "newsroom",
+                "área de download",
+                "serviço de notícias",
+                "seu contato de imprensa"
+              ],
+              [
+                "carreiras",
+                "ofertas de emprego",
+                "estudantes",
+                "profissionais",
+                "áreas de trabalho da gft",
+                "conheça nossa equipe",
+                "seu contato de recrutamento e seleção"
+              ],
+              ["eventos"]
+            ]}
+          />
         )}
-      </div>
+        <div>
+          <span>GFT BRASIL</span>
+        </div>
+      </Div>
     </>
   );
 };

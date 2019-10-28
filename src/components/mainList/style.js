@@ -11,19 +11,18 @@ export const Li = styled.li`
     color: white;
     padding-bottom: 20px;
     transition: 150ms all;
+    cursor: default;
   }
 
   :hover + div {
     visibility: visible;
     opacity: 1;
-    height: auto;
   }
 
   & + div {
     :hover {
       visibility: visible;
       opacity: 1;
-      height: auto;
     }
     z-index: 1;
     opacity: 0;
@@ -45,6 +44,47 @@ export const Li = styled.li`
       width: fit-content;
       color: white;
       font-weight: normal;
+    }
+  }
+`;
+export const Div = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 50px solid white;
+  div {
+    width: 100%;
+    h1 {
+      font-size: 25px;
+      margin-bottom: 50px;
+    }
+    span {
+      padding: 20px;
+      border-top: 0.5px solid #aaa;
+      font-size: 13px;
+      color: #aaa;
+      font-weight: bolder;
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-right: 30px;
+    list-style: none;
+    li {
+      :first-child {
+        font-size: 16px;
+        font-weight: bolder;
+      }
+      border-bottom: 0.5px solid #aaa;
+      padding: 20px;
+      text-transform: uppercase;
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      :last-child {
+        margin-bottom: 100px;
+      }
     }
   }
 `;

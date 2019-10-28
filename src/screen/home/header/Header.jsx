@@ -4,6 +4,7 @@ import MainList from "../../../components/mainList/index";
 import { Container, Div } from "./style";
 import logo from "../../../assets/logo.svg";
 import video from "../../../assets/video.mp4";
+import poster from "../../../assets/Stage_Home.png";
 
 export default function home() {
   return (
@@ -38,15 +39,23 @@ export default function home() {
       <Container>
         <Div>
           <video
-            muted=""
-            autoplay=""
+            muted="yes"
+            poster={poster}
+            autoPlay="yes"
             loop="yes"
-            tabindex="0"
+            tabIndex="0"
             data-vscid="gipxbssvq"
             width="100%"
           >
             <source src={video} type="video/mp4" />
           </video>
+        </Div>
+        <Div>
+          <h3>AGILE SINCE 1987.</h3>
+          <h1>Shaping the future of digital business</h1>
+          <button>
+            <span>Sobre a gft</span>
+          </button>
         </Div>
       </Container>
     </>
