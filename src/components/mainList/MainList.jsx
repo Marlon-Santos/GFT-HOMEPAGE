@@ -9,6 +9,7 @@ export const List = ({ children }) => {
     <>
       <Li
         ref={list}
+        lang={children}
         onMouseOver={e => {
           e.currentTarget.style = "";
           divi.current.style = `transition:none`;
@@ -21,11 +22,18 @@ export const List = ({ children }) => {
         {children}
       </Li>
       <Div
+        lang={children}
         ref={divi}
         onMouseOver={e => {
-          list.current.style = ` background-color: #0e317d;
+          children === "BRAZIL"
+            ? (list.current.style = `
+          background-color: #e5f4f7;
+          color: #001946;
+          padding-bottom: 20px;`)
+            : (list.current.style = `
+          background-color: #0e317d;
           color: white;
-          padding-bottom: 20px;`;
+          padding-bottom: 20px;`);
         }}
         onMouseOut={e => {
           list.current.style = `
@@ -39,7 +47,7 @@ export const List = ({ children }) => {
         }}
       >
         <div>
-          <h1>{children}</h1>
+          <h1>{children === "BRAZIL" ? "Select your country" : children}</h1>
         </div>
         {children === "SECTORS" && (
           <FormatList
@@ -105,6 +113,16 @@ export const List = ({ children }) => {
               ],
               ["eventos"]
             ]}
+          />
+        )}
+        {children === "BRAZIL" && (
+          <FormatList
+            info={[
+              ["gft worldwide", "canada|en", "france", "mexico", "switzerland"],
+              ["belgium", "canada|fr", "germany", "poland", "united kingdom"],
+              ["brazil", "costa rica", "italy", "spain", "united states"]
+            ]}
+            icon="true"
           />
         )}
         <div>
